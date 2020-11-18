@@ -42,10 +42,10 @@ def map(pos):
             [InlineKeyboardButton(text = '-->', callback_data = "help+2")]
         ]
     elif(pos==len(tr.HELP_MSG)-1):
-        url = "http://t.me/MotiPaakAssistantBot"
+        url = "http://t.me/About_MotiPaak"
         button = [
             [InlineKeyboardButton(text = 'Support Chat', url="http://t.me/MotiPaakAssistantBot")],
-            [InlineKeyboardButton(text = 'Feature Request & Issues', url=url)],
+            [InlineKeyboardButton(text = 'About Me', url=url)],
             [InlineKeyboardButton(text = '<--', callback_data = f"help+{pos-1}")]
         ]
     else:
