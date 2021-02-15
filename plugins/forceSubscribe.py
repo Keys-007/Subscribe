@@ -33,7 +33,7 @@ def _onUnMuteRequest(client, cb):
         client.send_message(chat_id, f"❗ **{cb.from_user.mention} is trying to UnMute himself but i can't unmute him because i am not an admin in this chat add me as admin again.**\n__#Leaving this chat...__")
         client.leave_chat(chat_id)
       else:
-        client.answer_callback_query(cb.id, text="❗ Warning: Don't click the button if you can speak freely.", show_alert=True)
+        client.answer_callback_query(cb.id, text="❗ Warning: Don't click the button if you can speak freely.❗", show_alert=True)
 
 
 
@@ -84,7 +84,7 @@ def config(client, message):
             if chat_member.restricted_by.id == (client.get_me()).id:
                 client.unban_chat_member(chat_id, chat_member.user.id)
                 time.sleep(1)
-          sent_message.edit('✅ **Finally UnMuted all members who are muted by me.**')
+          sent_message.edit('✅ **Finally UnMuted all members who are muted by me. ✌🏼**')
         except ChatAdminRequired:
           sent_message.edit('❗ **I am not an admin in this chat.**\n__I can\'t unmute members because i am not an admin in this chat make me admin with ban user permission.__')
       else:
@@ -102,6 +102,6 @@ def config(client, message):
       if sql.fs_settings(chat_id):
         message.reply_text(f"✅ **Force Subscribe is enabled in this chat.**\n__For this [Channel](https://t.me/{sql.fs_settings(chat_id).channel})__", disable_web_page_preview=True)
       else:
-        message.reply_text("❌ **Oops, Force Subscribe is disabled in this chat.**")
+        message.reply_text("❌ **Oops, Force Subscribe is disabled in this chat.😕**")
   else:
-      message.reply_text("❗ **Group Creator Required**\n__You have to be the group creator to do that.__")
+      message.reply_text("❗ **Group Creator Required**\n__You have to be the group creator to do that😕.__")
